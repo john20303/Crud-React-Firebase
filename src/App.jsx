@@ -46,7 +46,7 @@ function App() {
       const db = firebase.firestore();//Se instancia firebase
       const nuevaTarea = {name: tarea,fecha: Date.now()}//Se crea la tarea con los parámetros requeridos.
       const addTareaDB = await db.collection('tareas').add(nuevaTarea);//se guaqrda la nueva tarea en una constante.
-      setTareas([...tareas,{...nuevaTarea,id:addTareaDB.id}])
+      setTareas([...tareas,{...nuevaTarea,id:addTareaDB.id}])//Con esta linea , refrescamos la data y nos muestra los valores de una ves.
       setTarea('');
       
     } catch (error) {
